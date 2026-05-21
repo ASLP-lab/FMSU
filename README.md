@@ -39,7 +39,7 @@ To capture highly expressive spontaneous speech, we develop a robust, LLM-driven
 * **Progressive Two-Stage Annotation:** Leverages Gemini 2.5 Pro via a "macro-to-micro" strategy to extract 14 fine-grained speech attributes.
 * **Multi-Expert Cross-Validation:** Utilizes Qwen3-ASR, Emotion2vec, WavLM-based classifiers, and Wav2Vec-BERT to rigorously filter and refine annotations, ensuring high-quality structured data.
 
-<div align="center"><img width="650px" src="src/data_pipeline.png" alt="Data Pipeline"/></div>
+<div align="center"><img width="650px" src="src/pipeline.png" alt="Data Pipeline"/></div>
 
 ---
 
@@ -61,7 +61,7 @@ Leveraging the multi-dimensional fine-grained annotations produced by our pipeli
 
 <div align="center">
   <!-- 请在此处放一张精简的模型输入输出示意图 -->
-  <img width="500px" src="src/model_io.png" alt="Model Input Output Diagram"/>
+  <!--<img width="500px" src="src/model_io.png" alt="Model Input Output Diagram"/> -->
   <p><i>Input: Raw Speech Audio &emsp; ➔ &emsp; Output: 14-Dimension Fine-Grained Speech Attributes (Structured JSON)</i></p>
 </div>
 
