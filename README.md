@@ -53,6 +53,7 @@ Existing benchmarks predominantly cater to macroscopic tasks and suffer from coa
   4. *Acoustic Scene Analysis:* Background Sound, Acoustic Environment
   5. *Linguistic-Paralinguistic Integration:* Paralinguistic Events, Transcription with Paralinguistic Tags (Evaluated via our novel **PATA** metric).
 
+<div align="center"><img width="650px" src="src/bench_example.png" alt="Bench Example"/></div>
 ---
 
 ## 3. Model: FM-Speech
@@ -72,7 +73,7 @@ Our model is built upon the Qwen3-Omni architecture. We strongly recommend using
 
 **Step 1: Create a fresh Python environment** to avoid runtime conflicts and incompatibilities.
 ```bash
-conda create -n fmspeech python=3.10
+conda create -n fmspeech python=3.12
 conda activate fmspeech
 ```
 
@@ -106,17 +107,9 @@ We comprehensively evaluate FM-Speech against 11 advanced speech LLMs (including
 
 **FM-Speech achieves a state-of-the-art average score of 72.8%** among open-source models, outperforming the original Qwen3-Omni (69.4%) and surpassing proprietary models like Gemini 2.5 Flash and Gemini 3 Flash. It closely approaches the industry-leading Gemini 3.1 Pro (74.0%), demonstrating the immense effectiveness of our data curation and progressive fine-tuning framework.
 
-**Main Results on FMSU-Bench (Accuracy % / PATA %):**
+**Main Results on FMSU-Bench**
 
-| Model | Avg (%) ↑ | GEN | AGE | ACC | PIT | SR | RHY | EMO | BS | TPT |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Gemini 3.1 Pro | **74.0** | 86.3/85.3 | 62.4/65.2 | 81.9/75.8 | 66.6/74.6 | 69.8/71.7 | 87.3/91.9 | 76.0/68.9 | **66.7/61.4** | 71.0/60.8 |
-| Gemini 3 Flash | 71.9 | 85.4/88.3 | 63.3/59.1 | 65.1/67.0 | **69.3**/77.7 | **74.7/75.5** | 87.2/91.6 | 73.2/61.3 | 60.2/55.9 | 69.5/61.4 |
-| Step-Audio 2 | 48.7 | 90.2/87.5 | 42.4/38.7 | 67.2/48.0 | 24.3/21.4 | 34.7/38.8 | 58.6/65.8 | 56.2/40.3 | 31.7/36.8 | 47.8/43.4 |
-| Qwen3-Omni | 69.4 | 99.0/99.5 | 70.4/64.8 | 67.0/54.3 | 68.2/73.0 | 75.6/74.2 | 76.0/84.4 | 70.6/59.4 | 57.6/61.0 | 61.1/53.4 |
-| **FM-Speech (Ours)** | **72.8** | **99.1/99.3** | **75.2/79.2** | **83.5/75.1** | 55.2/78.4 | 52.9/72.2 | 74.4/78.6 | 62.5/63.3 | 65.8/55.8 | **77.0/79.8** |
-
-*(Note: Scores are reported in the format of ZH / EN. Please refer to Table III in our paper for the full 14-dimension breakdown.)*
+<div align="center"><img width="650px" src="src/bench_results.png" alt="Bench Results"/></div>
 
 ---
 
@@ -124,7 +117,7 @@ We comprehensively evaluate FM-Speech against 11 advanced speech LLMs (including
 ## Citation
 If you find our data pipeline, benchmark, or model useful for your research, please consider citing our paper:
 ```bibtex
-@misc{li2026towards,
+@misc{li2026finegrainedmultidimensionalspeechunderstanding,
       title={Towards Fine-Grained Multi-Dimensional Speech Understanding: Data Pipeline, Benchmark, and Model}, 
       author={Guojian Li and Zhixian Zhao and Zhennan Lin and Jingbin Hu and Qirui Zhan and Yuang Cao and Pengyuan Xie and Chuan Xie and Jie Liu and Qiang Zhang and Zhonghua Fu and Lei Xie},
       year={2026},
