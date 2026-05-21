@@ -16,7 +16,7 @@
 
 <div align="center">
 
-|  🎤 [Demo Page](https://aslp-lab.github.io/FMSU/) | 🤖 [FM-Speech Model](https://huggingface.co/ASLP-lab/FM-Speech) | 📑 [Paper](https://arxiv.org/abs/2605.12036) | 🌐 [FMSU-Bench Dataset](https://huggingface.co/datasets/ASLP-lab/FMSU-Bench) |
+|  🎤 [Demo Page](https://aslp-lab.github.io/FMSU/) | 🤖 [FM-Speech Model](https://huggingface.co/ASLP-lab/FM-Speech) | 📑 [Paper](https://arxiv.org/abs/2605.12036) | 🌐 [FMSU-Bench](https://huggingface.co/datasets/ASLP-lab/FMSU-Bench) |
 |:---:|:---:|:---:|:---:|
 
 </div>
@@ -62,7 +62,7 @@ Leveraging the multi-dimensional fine-grained annotations produced by our pipeli
 <div align="center">
   <!-- 请在此处放一张精简的模型输入输出示意图 -->
   <!--<img width="500px" src="src/model_io.png" alt="Model Input Output Diagram"/> -->
-  <p><i>Input: Raw Speech Audio &emsp; ➔ &emsp; Output: 14-Dimension Fine-Grained Speech Attributes (Structured JSON)</i></p>
+  <p><i>Input: Raw Speech &emsp; ➔ &emsp; Output: 14-Dimension Fine-Grained Speech Attributes (Structured JSON)</i></p>
 </div>
 
 To overcome modality gaps and text-conditioned hallucinations, FM-Speech is trained using a **Progressive Curriculum Fine-Tuning** framework, decoupling complex auditory comprehension into three incremental stages: Warm-up (MCQ/QA) $\rightarrow$ Capability Ramp-up $\rightarrow$ Final Alignment (Full JSON).
