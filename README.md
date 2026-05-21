@@ -37,7 +37,7 @@ To address the challenges of scarce high-quality expressive data, absent fine-gr
 To capture highly expressive spontaneous speech, we develop a robust, LLM-driven data curation pipeline augmented by multi-expert cross-verification. Extracting from in-the-wild audiovisuals (e.g., movies, TV shows), the pipeline effectively resolves complex acoustic environments and long-audio timestamp alignment challenges.
 * **Safe-Chunking:** Dynamically segments audio into 5-6 minute windows using Silero-VAD and BigASR to balance temporal hallucinations and context loss.
 * **Progressive Two-Stage Annotation:** Leverages Gemini 2.5 Pro via a "macro-to-micro" strategy to extract 14 fine-grained speech attributes.
-* **Multi-Expert Cross-Validation:** Utilizes Qwen3-ASR, Emotion2vec, WavLM-based classifiers, and Wav2Vec-BERT to rigorously filter and refine annotations, ensuring high-quality structured data.
+* **Multi-Expert Cross-Validation:** Utilizes Qwen3-ASR, Emotion2vec, WavLM-based classifiers, and Wav2Vec-BERT binary classifiers to rigorously filter and refine annotations, ensuring high-quality structured data.
 
 <div align="center"><img width="650px" src="src/pipeline.png" alt="Data Pipeline"/></div>
 
@@ -58,17 +58,13 @@ Existing benchmarks predominantly cater to macroscopic tasks and suffer from coa
 ## 3. Model: FM-Speech
 Leveraging the multi-dimensional fine-grained annotations produced by our pipeline, we introduce **FM-Speech**, built upon the frontier Qwen3-Omni (30B MoE) architecture. 
 
-<div align="center">
-  <!-- 请在此处放一张精简的模型输入输出示意图 -->
-  <!--<img width="500px" src="src/model_io.png" alt="Model Input Output Diagram"/> -->
-  <p><i>Input: Raw Speech &emsp; ➔ &emsp; Output: 14-Dimension Fine-Grained Speech Attributes (Structured JSON)</i></p>
-</div>
+> 🎙️ **Input:** Raw Speech Audio &emsp; ➔ &emsp; 📊 **Output:** 14-Dimension Fine-Grained Speech Attributes (Structured JSON)
 
 To overcome modality gaps and text-conditioned hallucinations, FM-Speech is trained using a **Progressive Curriculum Fine-Tuning** framework, decoupling complex auditory comprehension into three incremental stages: Warm-up (MCQ/QA) $\rightarrow$ Capability Ramp-up $\rightarrow$ Final Alignment (Full JSON).
 
 ### 🚀 Usage & Environment Setup
 
-Our model is built upon the Qwen3-Omni architecture. We strongly recommend using **vLLM** for the inference and deployment of FM-Speech. 
+Our model is built upon the [Qwen3-Omni](https://github.com/QwenLM/Qwen3-Omni) architecture. We strongly recommend using **vLLM** for the inference and deployment of FM-Speech. 
 
 **Step 1: Create a fresh Python environment** to avoid runtime conflicts and incompatibilities.
 ```bash
@@ -102,7 +98,7 @@ python infer.py
 ---
 
 ## 4. Results
-We comprehensively evaluate FM-Speech against 11 advanced speech LLMs (including Qwen3-Omni, Audio Flamingo 3, Gemini 3.1 Pro, etc.) on FMSU-Bench. 
+We comprehensively evaluate FM-Speech against 11 advanced speech LLMs (including Mimo-Audio, Audio Flamingo 3, Gemini 3.1 Pro, etc.) on FMSU-Bench. 
 
 **FM-Speech achieves a state-of-the-art average score of 72.8%** among open-source models, outperforming the original Qwen3-Omni (69.4%) and surpassing proprietary models like Gemini 2.5 Flash and Gemini 3 Flash. It closely approaches the industry-leading Gemini 3.1 Pro (74.0%), demonstrating the immense effectiveness of our data curation and progressive fine-tuning framework.
 
