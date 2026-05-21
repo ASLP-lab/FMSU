@@ -16,7 +16,7 @@
 
 <div align="center">
 
-|  🎤 [Demo Page](https://aslp-lab.github.io/FMSU/) | 🤖 [FM-Speech Model](https://huggingface.co/ASLP-lab/FM-Speech) | 📑 [Paper](https://arxiv.org/abs/2605.12036) | 🌐 [FMSU-Bench](https://huggingface.co/datasets/ASLP-lab/FMSU-Bench) |
+| 📑 [Paper](https://arxiv.org/abs/2605.12036) | 🤖 [FM-Speech Model](https://huggingface.co/ASLP-lab/FM-Speech) | 🌐 [FMSU-Bench](https://huggingface.co/datasets/ASLP-lab/FMSU-Bench) |
 |:---:|:---:|:---:|:---:|
 
 </div>
