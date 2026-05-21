@@ -45,7 +45,7 @@ To capture highly expressive spontaneous speech, we develop a robust, LLM-driven
 
 ## 2. FMSU-Bench
 Existing benchmarks predominantly cater to macroscopic tasks and suffer from coarse annotation granularity. We construct **FMSU-Bench**, a pioneering Fine-grained Multi-dimensional Speech Understanding Benchmark.
-* **Scale & Scope:** Comprises over **20,000 bilingual instances** (Chinese/English), manually verified by domain experts.
+* **Scale & Scope:** Comprises over **24,000 bilingual instances** (Chinese/English), manually verified by domain experts.
 * **Comprehensive Taxonomy:** Systematically covers **14 distinct speech dimensions** structured into a 5-tier taxonomy:
   1. *Speaker Demographics:* Gender, Age, Accent
   2. *Acoustic-Prosodic Features:* Pitch, Speaking Rate, Rhythm, Voice Texture
@@ -54,7 +54,6 @@ Existing benchmarks predominantly cater to macroscopic tasks and suffer from coa
   5. *Linguistic-Paralinguistic Integration:* Paralinguistic Events, Transcription with Paralinguistic Tags (Evaluated via our novel **PATA** metric).
 
 <div align="center"><img width="650px" src="src/bench_example.png" alt="Bench Example"/></div>
----
 
 ## 3. Model: FM-Speech
 Leveraging the multi-dimensional fine-grained annotations produced by our pipeline, we introduce **FM-Speech**, built upon the frontier Qwen3-Omni (30B MoE) architecture. 
